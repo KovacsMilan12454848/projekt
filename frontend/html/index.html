@@ -18,58 +18,94 @@
 
 <body>
 
-    <section class="focontainer h-100 text-white text-center">
-        <header>
-            <nav class="navbar navbar-expand-sm" id="navbg">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav w-100 d-flex justify-content-evenly mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="#"><button
-                                        class="btn btn-primary btn-lg">Dokumentáció</button></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><button
-                                        class="btn btn-primary btn-lg">Ajánlás</button></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><button
-                                        class="btn btn-primary btn-lg">Főoldal</button></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><button
-                                        class="btn btn-primary btn-lg">Kérdőív</button></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><button
-                                        class="btn btn-primary btn-lg">Statisztika</button></a></li>
-                        </ul>
-                    </div>
+    <header class="text-white text-center">
+        <nav class="navbar navbar-expand-sm sticky-top" id="navbg">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav w-100 d-flex justify-content-evenly mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#"><button
+                                    class="btn btn-primary btn-lg">Dokumentáció</button></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><button
+                                    class="btn btn-primary btn-lg">Ajánlás</button></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><button
+                                    class="btn btn-primary btn-lg">Főoldal</button></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><button
+                                    class="btn btn-primary btn-lg">Kérdőív</button></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><button
+                                    class="btn btn-primary btn-lg">Statisztika</button></a></li>
+                    </ul>
                 </div>
-
-            </nav>
-            <div>
-                <hr class="m-auto hr-w mt-4">
             </div>
 
-        </header>
+        </nav>
+        <div>
+            <hr class="m-auto hr-w mt-4">
+        </div>
 
-        <main>
-            <section>
-            <h1 class="my-3">Welcome to GlycineHub</h1>
+    </header>
+    <main class="container-fluid text-white text-center">
+        <section class="hero">
+            <h1 class="mt-4">GlycineHub</h1>
+        </section>
+
+        <section class="text-white text-center my-5 h-50 container-fluid">
+            <div>
+            <hr class="m-auto hr-w my-4">
+        </div>
+            <h2>Mi az Aminosav?</h2>
+            <div class="row">
+                <div class="col-6">
+                    <img src="../img/Aminopenicillanic.gif" alt="AminoSav" id="miaminosavgif">
+                </div>
+                <div class="col-6">
+                    <h3 class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rerum quis eum, possimus
+                        earum dolorem praesentium dolor natus suscipit? Perspiciatis nam voluptates doloremque
+                        voluptatem quibusdam deleniti? Soluta dolorum fugiat tempore.</h3>
+                </div>
+
+            </div>
+
         </section>
 
 
-        </main>
-        
+         <section class="text-white text-center my-5 h-50 container-fluid">
+            <div>
+            <hr class="m-auto hr-w my-4">
+        </div>
+            <h2>L-glicin</h2>
+            <div class="row">
+                
+                <div class="col-6">
+                    <h3 class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rerum quis eum, possimus
+                        earum dolorem praesentium dolor natus suscipit? Perspiciatis nam voluptates doloremque
+                        voluptatem quibusdam deleniti? Soluta dolorum fugiat tempore.</h3>
+                </div>
 
+                <div class="col-6">
+                    <img src="../img/Glycine.gif" alt="AminoSav" id="glicingif">
+                </div>
 
+            </div>
 
+        </section>
 
-        <footer class="bg-primary container-fluid text-center fixed-bottom">
+    </main>
+
+    <footer class="bg-dark container-fluid text-center">
+        <div>
+            <hr class="m-auto hr-w mt-4">
+        </div>
+
         <div class="row p-2 mt-1 text-white">
 
             <div class="col-sm-12 col-md-4 ">
                 <i>
                     <h3 class="my-3">Elérhetőségek:</h3>
                 </i>
-
-
                 <p><a href="https://github.com/DomokosAlex"><i class="bi bi-github"></i> Github</a></p>
             </div>
 
@@ -93,7 +129,6 @@
         </div>
     </footer>
 
-    </section>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
