@@ -1,11 +1,11 @@
 const ctx = document.getElementById('ar').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'bar', // 'line', 'pie', 'doughnut', etc.
+const chart = new Chart(ctx, {
+    type: 'bar', 
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green'], // X-axis labels
+        labels: ['Red', 'Blue', 'Yellow', 'Green'], 
         datasets: [{
             label: '# of Votes',
-            data: [5, 2, 3, 5], // Y-axis data
+            data: [5, 2, 3, 5], 
             backgroundColor: [
                 'red', 'blue', 'yellow', 'green'
             ],
@@ -26,5 +26,4 @@ const myChart = new Chart(ctx, {
     }
 });
 
-
-myChart.update();
+chart.update();

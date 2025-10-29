@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Kerdes {
     constructor(sorszam, szoveg, valaszok) {
         this.sorszam = sorszam;
@@ -81,6 +82,8 @@ const kerdesek = [
     ], false)
 ];
 
+=======
+>>>>>>> d226615 (Statisztika oldal mukodik, adatokat kap egyenesen az adatbol)
 
 let index = 0;
 const kitoltes_eredmeny = {};

@@ -62,6 +62,15 @@ app.get('/', (req, res) => {
 });
 
 
+app.get('/statisztikak', (req, res) => {
+    connection.query('SELECT * FROM kerdoiv', (err, results) => {
+        if (err) return res.send('Hiba történt: ' + err);
+        res.json(results);
+    });
+});
+
+
+
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));
 
 
