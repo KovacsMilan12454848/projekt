@@ -1,8 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {
-    /*
-        
-    
-    */
 
     async function fetchAdat() {
 
@@ -57,10 +53,6 @@ window.addEventListener("DOMContentLoaded", () => {
             nem.update();
 
         }
-
-
-
-
 
     }
 

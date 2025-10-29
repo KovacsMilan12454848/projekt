@@ -11,17 +11,11 @@ nav.innerHTML=`
                     <ul class="navbar-nav w-100 d-flex justify-content-evenly mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#"><button
                                     class="btn btn-outline-primary btn-lg text-white">Dokumentáció</button></a></li>
-<<<<<<< HEAD
-                        <li class="nav-item"><a class="nav-link" href="/html/ajanlas.html"><button
-                                    class="btn btn-outline-primary btn-lg text-white">Ajánlás</button></a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html"><button
-=======
 
                         <li class="nav-item"><a class="nav-link" href="/html/ajanlas.html"><button
                                     class="btn btn-outline-primary btn-lg text-white">Glicin Teszt</button></a></li>
 
                         <li class="nav-item"><a class="nav-link" href="/html/index.html"><button
->>>>>>> d226615 (Statisztika oldal mukodik, adatokat kap egyenesen az adatbol)
                                     class="btn btn-outline-primary btn-lg text-white">Főoldal</button></a></li>
 
                         <li class="nav-item"><a class="nav-link" href="/html/kerdoiv.html"><button
