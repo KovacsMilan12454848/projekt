@@ -13,12 +13,12 @@ const Kalkulator_adat = [
     new Kalkulator(1, "Milyen gyakran eszel csontlevest, bőrös húst vagy zselatint?", [{ ker: "Nem szoktam", ert: 0 }, { ker: "Hetente párszor", ert: 2 }, { ker: "Hetente egyszer", ert: 1 }, { ker: "Szinte naponta", ert: 3 }], 1.5),
     new Kalkulator(2, "Milyen arányban eszel izomhúst vs kötőszövetes részeket?", [{ ker: "Nem szoktam", ert: 0 }, { ker: "Főleg izomhús", ert: 0 }, { ker: "Vegyesen", ert: 1 }, { ker: "Több kötőszövetes", ert: 3 }], 1.2),
     new Kalkulator(3, "Hogyan gyógyulnak a sebeid/karcolások?", [{ ker: "Lassan (hetek)", ert: 0 }, { ker: "Normál", ert: 1 }, { ker: "Gyorsan (napok)", ert: 3 }], 1),
-    new Kalkulator(4, "Tapasztalsz-e rendszeres ízületi/izomfájdalmat?", [{ ker: "Gyakran", ert: 0 }, { ker: "Néha", ert: 1 }, { ker: "Ritkán / soha", ert: 3 }], 1),
-    new Kalkulator(5, "Milyen az alvásminőséged?", [{ ker: "Rosszul", ert: 0 }, { ker: "Közepesen", ert: 1 }, { ker: "Jól, pihenten", ert: 3 }], 0.9),
-    new Kalkulator(6, "Mennyire vagy stresszes, ideges általában?", [{ ker: "Gyakran", ert: 0 }, { ker: "Néha", ert: 1 }, { ker: "Ritkán", ert: 3 }], 0.9),
-    new Kalkulator(7, "Szedtél-e glicint/kollagént valaha?", [{ ker: "Nem", ert: 0 }, { ker: "Igen, ritkán", ert: 1 }, { ker: "Igen, napi szinten", ert: 3 }], 1),
-    new Kalkulator(8, "Ha szedsz, mennyi glicint/kollagént viszel be naponta?", [{ ker: "0–2 g", ert: 0 }, { ker: "3–5 g", ert: 2 }, { ker: "6–10 g", ert: 3 }, { ker: "11 g fölött", ert: 1 }], 1.1),
-    new Kalkulator(9, "Tapasztaltál mellékhatásokat (puffadás, hányinger, álmosság) szedés után?", [{ ker: "Igen, gyakran", ert: 0 }, { ker: "Néha", ert: 1 }, { ker: "Soha", ert: 3 }], 1)];
+    new Kalkulator(4, "Tapasztalsz-e ízületi/izomfájdalmat?", [{ ker: "Gyakran tapasztalok", ert: 0 }, { ker: "Néha tapasztalok ", ert: 1 }, { ker: "Ritkán tapasztalok ", ert: 3 },{ ker: "Nem tapasztalok ", ert: 3 }], 1),
+    new Kalkulator(5, "Milyen az alvásminőséged?", [{ ker: "Rosszul alszom", ert: 0 }, { ker: "Közepesen alszom", ert: 1 }, { ker: "Jól alszom", ert: 3 }], 0.9),
+    new Kalkulator(6, "Mennyire vagy stresszes, ideges általában?", [{ ker: "Gyakran vagok ideges", ert: 0 }, { ker: "Néha vgaok ideges", ert: 1 }, { ker: "Ritkán, általában jól vagyok", ert: 3 },{ ker: "Nem szoktam", ert: 3 }], 0.9),
+    new Kalkulator(7, "Szedtél-e glicint/kollagént valaha?", [{ ker: "Nem ", ert: 0 }, { ker: "Igen, ritkán", ert: 1 }, { ker: "Igen, napi szinten", ert: 3 }], 1),
+    new Kalkulator(8, "Ha szedsz, mennyi glicint/kollagént viszel be naponta?", [{ ker: "Nem szedek", ert: 0 },{ ker: "0–2 g", ert: 0 }, { ker: "3–5 g", ert: 2 }, { ker: "6–10 g", ert: 3 }, { ker: "11 g fölött", ert: 1 }], 1.1),
+    new Kalkulator(9, "Tapasztaltál mellékhatásokat (puffadás, hányinger, álmosság) szedés után?", [{ ker: "Nem szedek", ert: 0 },{ ker: "Igen, gyakran tapasztaltam", ert: 1 }, { ker: "Néha, tapasztaltam", ert: 2 }, { ker: "Nem tapasztaltam", ert: 3 }], 1)];
 
 let currentIndex = -1;
 let userMeta = { nem: "", testsuly: null, magassag: null };
@@ -177,6 +177,7 @@ function Kovetkezo() {
 
     if (currentIndex === Kalkulator_adat.length - 1) {
         if (Kalkulator_adat.every(q => q.megcsinalta || q.valasztott !== null)) {
+            alert("Lejebb görgetve megtekintheti az eredményét")
             Befejezes();
             return;
         } else {
@@ -258,14 +259,14 @@ function Befejezes() {
     let status, tanacs = [];
 
     if (szazalek < 40) {
-        status = "Glicin/kollagén bevitel valószínű hiányos";
+        status = "Glicin/kollagén bevitel valószínű hiányos.";
         tanacs.push("Növeld a kollagénben gazdag ételek (csontlé, bőr, zselatin) fogyasztását.");
         tanacs.push("Próbálj 5–10 g napi glicint vagy kollagénport 1–2 hétig, és figyeld a változásokat.");
     } else if (szazalek < 70) {
         status = "Közel optimális";
         tanacs.push("3–5 g/nap valószínűleg elegendő; tartsd a változatos fehérjebevitelt.");
     } else {
-        status = "Magas/gyakori glicinbevitel vagy túl sok kiegészítő";
+        status = "Magas/gyakori glicinbevitel vagy túl sok kiegészítő.";
         tanacs.push("Fontold meg a bevitel csökkentését 3–5 g/nap alá, ha mellékhatásokat tapasztalsz.");
         tanacs.push("Ha gyakran érzel álmosságot vagy emésztési panaszt, tarts szünetet.");
     }
@@ -293,7 +294,7 @@ function Befejezes() {
       <h4>Eredmény</h4>
       <p class="mb-1"><strong>Kód (ezzel később is megnézheted az eredményed):</strong> ${eredmeny_kod}</p>
       <p class="mb-1"><strong>Kategória:</strong> ${status}</p>
-      <p class="mb-1"><strong>Pontszám:</strong> ${user_ossz} / ${max} (${szazalek}%)</p>
+      <p class="mb-1"><strong>Pontszám:</strong> ${user_ossz} / ${max} (${szazalek.toFixed(2)}%)</p>
       ${bmi !== null ? `<p class="mb-1"><strong>BMI:</strong> ${bmi}</p>` : `<p class="mb-1 text-muted">BMI kiszámításához add meg a testsúlyt és magasságot.</p>`}
       <hr>
       <h6>Ajánlások</h6>
@@ -341,8 +342,9 @@ function getSzazalekFromRow(data) {
 window.handleAjanlas = function (data) {
     console.log('Raw row:', data);
 
-
-
+    
+    
+    let tanacsok = data.tanacs.split(".,");
     const out = document.getElementById("resultArea");
     out.innerHTML = `
     <div class="card p-3">
@@ -352,11 +354,13 @@ window.handleAjanlas = function (data) {
       ${data.bmi !== null ? `<p class="mb-1"><strong>BMI:</strong> ${data.bmi}</p>` : `<p class="mb-1 text-muted">BMI kiszámításához add meg a testsúlyt és magasságot.</p>`}
       <hr>
       <h6>Ajánlások</h6>
-      <ul>
-        <li>${data.tanacs} </li>
+     <ul>
+        ${tanacsok.map(a => `<li>${a}</li>`).join("")}
       </ul>
     </div>
   `;
+
+  
 };
 
 document.getElementById('lekeres').addEventListener('click', () => {
